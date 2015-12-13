@@ -1,0 +1,11 @@
+.form-group span label{
+	display: inline;
+	font-weight: normal;
+	padding: 0px 10px;
+}
+.jumbotron{
+     background-repeat:no-repeat;
+     padding:000px 0 000px 0;
+     margin-bottom:0px;
+     background-color:#770533;
+	 }
