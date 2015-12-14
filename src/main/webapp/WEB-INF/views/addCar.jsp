@@ -34,38 +34,53 @@
 					<label for="car-model">
 						<spring:message code="addCar.form.model.label"/>
 					</label>
-					<form:input id="model" path="model" cssClass="form-control" />
+					<form:input id="model" path="model" maxlength="20" cssClass="form-control" />
 					<form:errors path="model"/>
 				</div>
 				<div class="form-group" >
 					<label for="make">
 						<spring:message code="addCar.form.make.label"/>
 					</label>
-					<form:input id="make" path="make" cssClass="form-control"/>
+					<form:input id="make" path="make" maxlength="20" cssClass="form-control"/>
 					<form:errors path="make"/>
 				</div>
 				<div class="form-group">
 					<label for="registration">
 						<spring:message code="addCar.form.registration.label"/>
 					</label>
-					<form:input id="registration" path="registration" cssClass="form-control"/>
+					<form:input id="registration" path="registration" maxlength="20" cssClass="form-control"/>
 					<form:errors path="registration"/>
 				</div>
-				
-				
-				
+					
+				<div class="form-group">
+					<label for="type">
+						<spring:message code="addCar.form.engine.type.label"/>
+					</label>
+					<form:input id="type" path="engine.type" maxlength="20" cssClass="form-control" />
+					<form:errors path="engine.type"/>
+				</div>				
+				<div class="form-group">
+					<label for="capacity">
+						<spring:message code="addCar.form.engine.capacity.label"/>
+					</label>
+					<form:input id="capacity" path="engine.capacity" type="number" min="1" max="5000" maxlength="5" cssClass="form-control" />
+					<form:errors path="engine.capacity"/>
+				</div>				
 				<div class="form-group">
 					<label for="power">
 						<spring:message code="addCar.form.engine.power.label"/>
 					</label>
-					<form:input id="power" cssClass="form-control" path="engine.power"/>
-						<form:errors path="power"/>
-				</div>
+					<form:input id="power" path="engine.power" type="number" min="1" max="1000" maxlength="5" cssClass="form-control" />
+					<form:errors path="engine.power"/>
+				</div>		
+			
+					
+					
 				<div class="form-group">
 					<label for="trunkSize">
 						<spring:message code="addCar.form.trunk.label"/>
 					</label>
-					<form:input id="trunk" path="trunk" cssClass="form-control"/>
+					<form:input id="trunk" path="trunk" type="number" min="1" max="1000" maxlength="5" cssClass="form-control"/>
 						<form:errors path="trunk"/>
 				</div>
 				<div class="form-group">
@@ -75,25 +90,19 @@
 					<form:select path="fuel" items="${fuelOptions}" cssClass="selectpicker"/>
 						<form:errors path="fuel"/>
 				</div>
-				
-				
-				
 				<div class="form-group">
 					<label for="kilometers">
 						<spring:message code="addCar.form.kilometers.label"/>
 					</label>
-					<form:input id="kilometers" path="kilometers" cssClass="form-control"/>
+					<form:input id="kilometers" path="kilometers" type="number" min="1" max="999999" maxlength="6" cssClass="form-control"/>
 						<form:errors path="kilometers"/>
 				</div>
-				
-				
-				
 								
 				<div class="form-grup">
 					<label for="color">
 						<spring:message code="addCar.form.color.label"/>
 					</label>
-					<form:input id="color" path="color" cssClass="form-control"/>
+					<form:input id="color" path="color" maxlength="20" cssClass="form-control"/>
 						<form:errors path="color"/>
 				</div>		
 			</br>
@@ -126,17 +135,18 @@
 					<label for="description">
 						<spring:message code="addCar.form.description.label"/>
 					</label>
-					<form:textarea id="description" path="description" class="form-control"/>
+					<form:textarea id="description" path="description" maxlength="200" class="form-control"/>
 				</div>
 				
 				<div class="form-grup">
-					<label for="color">
+					<label for="price">
 						<spring:message code="addCar.form.price.label"/>
 					</label>
-					<form:input id="price" path="price" cssClass="form-control"/>
+					<form:input id="price" path="price" type="number" min="1" max="1000" maxlength="5" cssClass="form-control"/>
 						<form:errors path="price"/>
 				</div>	
 			</br>
+			
 			
 				<button type="submit" class="btn btn-default">
 					<spring:message code="addCar.form.submit.label"/>
