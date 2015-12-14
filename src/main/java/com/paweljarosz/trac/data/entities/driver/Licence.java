@@ -21,11 +21,8 @@ public class Licence {
 	@Column(name="LICENCE_NUMBER")
 	private String number;
 	
-	@Column(name="EXPIRATION_DATE")
-	private Date expirationDate;
-	
-	@Column(name="AUTHORISATION_DATE")
-	private Date authorisationDate;
+	@Column(name="CATEGORY")
+	private String category;
 	
 	@OneToOne(mappedBy="licence")
 	private Driver driver;
@@ -39,17 +36,11 @@ public class Licence {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	public Date getExpirationDate() {
-		return expirationDate;
+	public String getCategory() {
+		return category;
 	}
-	public void setExpirationDate(Date expirationDate) {
-		this.expirationDate = expirationDate;
-	}
-	public Date getAuthorisationDate() {
-		return authorisationDate;
-	}
-	public void setAuthorisationDate(Date authorisationDate) {
-		this.authorisationDate = authorisationDate;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public Driver getDriver() {
 		return driver;

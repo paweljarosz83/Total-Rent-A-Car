@@ -31,7 +31,7 @@
 						<td>${driver.address.street}</td>
 						<td>${driver.address.number}</td>
 						<td>${driver.address.city}</td>
-						<td>${driver.address.postCode}</td>
+						<td>${driver.address.post}</td>
 					</tr>	
 				</c:forEach>
 			</tbody>

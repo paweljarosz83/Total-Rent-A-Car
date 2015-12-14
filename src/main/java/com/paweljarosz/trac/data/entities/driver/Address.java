@@ -25,8 +25,8 @@ public class Address {
 	@Column(name="CITY")
 	private String city;
 	
-	@Column(name="POSTCODE")
-	private String postCode;
+	@Column(name="POST_CODE")
+	private String post;
 
 	
 	
@@ -49,11 +49,12 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getPostCode() {
-		return postCode;
+
+	public String getPost() {
+		return post;
 	}
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
+	public void setPost(String post) {
+		this.post = post;
 	}
 	public Long getAddressId() {
 		return addressId;

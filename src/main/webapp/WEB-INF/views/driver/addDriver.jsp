@@ -28,19 +28,27 @@
 		<spring:url value="/drivers/save" var="formUrl"/>
 		
 			<form:form action="${formUrl}" method="POST" modelAttribute="driver">
-			
+					
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="name">
+					<label for="name">
 						<spring:message code="addDriver.form.name.label"/>
 					</label>
-					<form:input id="name" path="name" cssClass="form-control" />
+					<form:input id="name" path="name" maxlength="20" cssClass="form-control" />
+					<form:errors path="name"/>
 				</div>
-
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="surname">
+					<label for="surname">
 						<spring:message code="addDriver.form.surname.label"/>
 					</label>
-					<form:input id="surname" path="surname" cssClass="form-control"/>
+					<form:input id="surname" path="surname" maxlength="20" cssClass="form-control"/>
+					<form:errors path="surname"/>
+				</div>
+				<div class="form-group">
+					<label for="personalIdentificationNumber">
+						<spring:message code="addDriver.form.personalIdentificationNumber.label"/>
+					</label>
+					<form:input id="personalIdentificationNumber" path="personalIdentificationNumber" maxlength="20" cssClass="form-control"/>
+					<form:errors path="personalIdentificationNumber"/>
 				</div>
 			
 			
@@ -49,58 +57,49 @@
 					<label for="street">
 						<spring:message code="addDriver.form.address.street.label"/>
 					</label>
-					<form:input id="street" cssClass="form-control" path="address.street" />
+					<form:input id="street" path="address.street" cssClass="form-control" maxlength="20"/>
+					<form:errors path="address.street"/>
 				</div>
 				<div class="form-group">
 					<label for="number">
 						<spring:message code="addDriver.form.address.number.label"/>
 					</label>
-					<form:input id="number" cssClass="form-control" path="address.number" />
+					<form:input id="number" path="address.number" cssClass="form-control" maxlength="20"/>
+					<form:errors path="address.number"/>
 				</div>
 				<div class="form-group">
 					<label for="city">
 						<spring:message code="addDriver.form.address.city.label"/>
 					</label>
-					<form:input id="city" cssClass="form-control" path="address.city" />
+					<form:input id="city" path="address.city" cssClass="form-control" maxlength="20"/>
+					<form:errors path="address.city"/>
 				</div>
 				<div class="form-group">
-					<label for="postCode">
-						<spring:message code="addDriver.form.address.postCode.label"/>
+					<label for="post">
+						<spring:message code="addDriver.form.address.post.label"/>
 					</label>
-					<form:input id="postCode" cssClass="form-control" path="address.postCode" />
+					<form:input id="post" path="address.post" cssClass="form-control" maxlength="20"/>
+					<form:errors path="address.post"/>
 				</div>
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+				<div class="form-group">
+					<label for="licencenumber">
+						<spring:message code="addDriver.form.licence.licencenumber.label"/>
+					</label>
+					<form:input id="licencenumber" path="licence.number" cssClass="form-control" maxlength="20"/>
+					<form:errors path="licence.number"/>
+				</div>
+				<div class="form-group">
+					<label for="category">
+						<spring:message code="addDriver.form.licence.category.label"/>
+					</label>
+					<form:input id="category" path="licence.category" cssClass="form-control" maxlength="20"/>
+					<form:errors path="licence.category"/>
+				</div>
+				<br/>
+				
 				<button type="submit" class="btn btn-default">Submit</button>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+						
 			</form:form>
 		</div>
 	</div>

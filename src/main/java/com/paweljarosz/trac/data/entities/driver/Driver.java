@@ -25,8 +25,11 @@ public class Driver {
 	
 	@Column(name="SURNAME")
 	private String surname;
+	
+	@Column(name="PERSONAL_ID_NUMBER")
+	private String personalIdentificationNumber;
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="LICENCE_ID")
 	private Licence licence;
 	
@@ -60,5 +63,11 @@ public class Driver {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	public String getPersonalIdentificationNumber() {
+		return personalIdentificationNumber;
+	}
+	public void setPersonalIdentificationNumber(String personalIdentificationNumber) {
+		this.personalIdentificationNumber = personalIdentificationNumber;
 	}
 }

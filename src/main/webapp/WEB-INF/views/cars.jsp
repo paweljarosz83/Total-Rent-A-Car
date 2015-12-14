@@ -15,37 +15,28 @@
 
 </head>
 <body>
-	
 	<jsp:include page="../views/fragments/header.jsp"></jsp:include>			
-
 	<div class="container">
-		
-
-		
-		
+	
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-					<th>Registration</th><th>Model</th><th>Make</th><th>Fuel</th><th>Body</th><th>Description</th>
+					<th>Registration</th><th>Model</th><th>Make</th><th>Body</th><th>Fuel</th><th>Horse Power</th><th>Engine Type</th><th>Price</th>
 				</tr>
 				<c:forEach items="${cars}" var="car">
 					<tr>
 						<td><a href="<spring:url value="/cars/car/${car.carId}"/>">${car.registration}</a></td>
 						<td>${car.model}</td>
 						<td>${car.make}</td>
-						<td>${car.fuel}</td>
 						<td>${car.body}</td>
+						<td>${car.fuel}</td>
 						<td>${car.engine.power}</td>
-						<%-- <td>${car.description}</td> --%>
-						
-						<td>${m.m}</td>
-				
+						<td>${car.engine.type}</td>
+						<td>${car.price}</td>
 					</tr>	
 				</c:forEach>
 			</tbody>
 		</table>
-		
-
 	</div>
 </body>
 </html>
