@@ -40,7 +40,7 @@
 
 				<div class="form-group">
 					<label for="driverName"> <spring:message
-							code="addCar.form.rental.driver.label" />
+							code="addRental.form.drivers.label" />
 					</label>
 					<form:select path="nameAndSurname" items="${driverNames}"
 						cssClass="selectpicker" />
@@ -48,21 +48,35 @@
 
 				<div class="form-group">
 					<label for="carRegistration"> <spring:message
-							code="addCar.form.rental.car.label" />
+							code="addRental.form.registrations.label" />
 					</label>
 					<form:select path="carRegistrations" items="${carRegistrations}"
 						cssClass="selectpicker" />
 				</div>
-				<
+
 				<div class="form-group">
-					<label for="pickupDate"> <spring:message
-							code="addRental.form.rental.returnDate" />
+					<label for="from">
+						<spring:message code="addRental.form.from.label"/>
 					</label>
-					<form:input id="pickupDate" path="pickupDate"
-						cssClass="form-control" />
+					<form:input id="from" path="from" maxlength="10" cssClass="form-control"/>
+					<form:errors path="from"/>
 				</div>
 
-		
+				<div class="form-group">
+					<label for="to">
+						<spring:message code="addRental.form.to.label"/>
+					</label>
+					<form:input id="to" path="to" maxlength="10" cssClass="form-control"/>
+					<form:errors path="to"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="returnPoint">
+						<spring:message code="addRental.form.to.label"/>
+					</label>
+					<form:input id="returnPoint" path="returnPoint" maxlength="100" cssClass="form-control"/>
+					<form:errors path="returnPoint"/>
+				</div>
 
 				<button type="submit" class="btn btn-default">Submit</button>
 

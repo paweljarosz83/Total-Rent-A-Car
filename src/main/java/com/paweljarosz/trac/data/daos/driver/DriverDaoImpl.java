@@ -17,10 +17,11 @@ public class DriverDaoImpl extends BaseDaoImpl implements DriverDao{
 
 	@Override
 	public Driver findDriverByNameAndSurname(String name,String surname) {
-		System.out.println("zapyt driv");
+		
 		TypedQuery<Driver>query = em.createQuery("SELECT d FROM Driver d WHERE d.name= (:name) AND d.surname= (:surname)",Driver.class);
 		query.setParameter("name", name);
 		query.setParameter("surname", surname);
+		System.out.println(query.getSingleResult());
 		return query.getSingleResult();
 	}
 

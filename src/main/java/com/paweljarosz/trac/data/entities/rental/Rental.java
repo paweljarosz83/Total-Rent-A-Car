@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.paweljarosz.trac.data.entities.branch.Agent;
 import com.paweljarosz.trac.data.entities.car.Car;
 import com.paweljarosz.trac.data.entities.driver.Driver;
 
@@ -28,13 +29,55 @@ public class Rental {
 	private Date pickupDate;
 	
 	@Column(name="RETURN_DATE")
-	private String returnDate;
+	private Date returnDate;
+	
+	@Transient
+	private String from;
+	@Transient
+	private String to;
+	
+	@Column(name="RETURN_POINT")
+	private String returnPoint;
+	
+//	@Column
+//	private Agent agent;
+//	
+//	@Column
+//	private Integer mileageBefore;
+//	
+//	@Column
+//	private boolean euTravel;
 
+	public String getReturnPoint() {
+		return returnPoint;
+	}
+	public void setReturnPoint(String returnPoint) {
+		this.returnPoint = returnPoint;
+	}
+	public Date getPickupDate() {
+		return pickupDate;
+	}
+	public void setPickupDate(Date pickupDate) {
+		this.pickupDate = pickupDate;
+	}
+	public String getFrom() {
+		return from;
+	}
+	public void setFrom(String from) {
+		this.from = from;
+	}
+	public String getTo() {
+		return to;
+	}
+	public void setTo(String to) {
+		this.to = to;
+	}
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
 	@ManyToOne
 	@JoinColumn(name="DRIVER_ID")
 	private Driver driver;
-	
-	//private Date fromDate;
 	
 	@Transient
 	private String nameAndSurname;
@@ -85,12 +128,7 @@ public String getCarRegistrations() {
 	public void setCarRegistrations(String carRegistrations) {
 		this.carRegistrations = carRegistrations;
 	}
-	//	public Date getFromDate() {
-//		return fromDate;
-//	}
-//	public void setFromDate(Date fromDate) {
-//		this.fromDate = fromDate;
-//	}
+
 	public Driver getDriver() {
 		return driver;
 	}
@@ -100,18 +138,10 @@ public String getCarRegistrations() {
 	public Long getRentalId() {
 		return rentalId;
 	}
-	public Date getPickupDate() {
-		return pickupDate;
-	}
-	public void setPickupDate(Date pickupDate) {
-		this.pickupDate = pickupDate;
-	}
-	public String getReturnDate() {
+	public Date getReturnDate() {
 		return returnDate;
 	}
-	public void setReturnDate(String returnDate) {
-		this.returnDate = returnDate;
-	}
+
 
 
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.paweljarosz.trac.data.entities.car.Car;
+import com.paweljarosz.trac.data.entities.driver.Driver;
 import com.paweljarosz.trac.data.repositories.CarRepository;
 import com.paweljarosz.trac.web.services.CarService;
 import com.paweljarosz.trac.web.services.validators.CarValidator;

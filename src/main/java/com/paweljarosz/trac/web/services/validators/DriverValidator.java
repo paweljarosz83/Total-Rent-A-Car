@@ -1,12 +1,24 @@
 package com.paweljarosz.trac.web.services.validators;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.paweljarosz.trac.data.entities.driver.Driver;
+import com.paweljarosz.trac.web.services.DriverService;
 
+@Component
 public class DriverValidator implements Validator{
 
+	DriverService driverService;
+	
+	public DriverValidator(){
+	}
+	public DriverValidator(DriverService driverService){
+		this.driverService=driverService;
+	}
+	
 	private static final int MIN_LENGTH = 1;
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -42,12 +54,29 @@ public class DriverValidator implements Validator{
 		if (driver.getAddress().getPost().length() < MIN_LENGTH) {
 			errors.rejectValue("address.post", "driver.address.post", "");
 		}
-		
 		if (driver.getLicence().getNumber().length() < MIN_LENGTH) {
 			errors.rejectValue("licence.number", "driver.licence.number", "");
 		}
 		if (driver.getLicence().getCategory().length() < MIN_LENGTH) {
 			errors.rejectValue("licence.category", "driver.licence.category", "");
+		}
+		if(checkDriverAlreadyExists(driver)){
+			errors.rejectValue("surname", "driver.surname.duplicate", "");
+		}
+	}
+	private boolean checkDriverAlreadyExists(Driver driver) {
+		try {
+			if (driver.getName() == null || driver.getSurname() == null) {
+				return false;
+			} else {
+				Driver d = driverService.findDriverByNameAndSurname(driver.getName(), driver.getSurname());
+				if (d == null) {
+					return false;
+				}
+				return true;
+			} 
+		} catch (Exception e) {
+			return false;
 		}
 	}
 }

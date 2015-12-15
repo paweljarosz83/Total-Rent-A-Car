@@ -52,10 +52,10 @@ public class DriverController {
 	@RequestMapping(value="/driver/{Id}")
 	public String findOne(Model model, @PathVariable Long Id){
 		model.addAttribute("driver",this.driverService.findOne(Id));
-		return "driver";
+		return "driver\\driver";
 	}
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
-		binder.addValidators(new DriverValidator());
+		binder.addValidators(new DriverValidator(driverService));
 	}
 }

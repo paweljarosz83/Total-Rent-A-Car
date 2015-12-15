@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.paweljarosz.trac.data.daos.car.CarDao;
 import com.paweljarosz.trac.data.entities.car.Car;
+import com.paweljarosz.trac.data.entities.driver.Driver;
 
 @EnableTransactionManagement
 @Service
