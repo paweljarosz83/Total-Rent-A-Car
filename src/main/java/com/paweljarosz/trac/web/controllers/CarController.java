@@ -27,7 +27,7 @@ import com.paweljarosz.trac.web.services.validators.CarValidator;
 
 
 
-@SessionAttributes
+@SessionAttributes()
 @Controller
 @RequestMapping("/cars")
 public class CarController {
@@ -78,42 +78,45 @@ public class CarController {
 	public String review(@ModelAttribute Car car){
 		return "car";
 	}
-	
-//	@ModelAttribute("car")
-//	public Car getCar(){
-//		System.out.println("dodaje car");
-//		return new Car();
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//1//////////////////////////////////
-	
-	//SEARCHING
+
 	@RequestMapping(value="/cars")
 	public String  find(Model model){
 		//model.addAttribute("cars",this.carRepository.findAll());
-		
 		model.addAttribute("cars",this.carService.getCars());
 		return "cars";
 	}
-	
+	Car car;
 	@RequestMapping(value="/car/{Id}")
 	public String findCar(Model model, @PathVariable Long Id){
+		car  = this.carRepository.findOne(Id);
 		model.addAttribute("car",this.carRepository.findOne(Id));
 		return "car";
 	}
+	
+	@RequestMapping(value="/edit/{Id}")
+	public String editCar(Model model,@PathVariable Long Id){
+		System.out.println(Id);
+
+		initFormComponents(model);
+		//model.addAttribute("car",this.carRepository.getOne(Id));
+		model.addAttribute("car",car);
+		return "addCar";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //	@RequestMapping(value="/find/{make}")
 //	public String findByMake(@PathVariable String make, Model model){

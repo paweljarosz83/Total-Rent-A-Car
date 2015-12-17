@@ -65,11 +65,18 @@ public class RentalController {
 		initComponents(model);
 		if(!errors.hasErrors()){
 			rentalService.saveRental(rental);
-			return "rental\\addRental";
+			return "redirect:/rentals/rentals";
 		}else{
 			//return "redirect:/rentals/add";
 			return "rental\\addRental";
 		}
+	}
+	
+	//find all drivers
+	@RequestMapping(value="/rentals")
+	public String find(Model model){
+		model.addAttribute("rentals", this.rentalService.getRentals());
+		return "rental\\rentals";
 	}
 
 	@InitBinder

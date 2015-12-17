@@ -38,30 +38,15 @@
 					  <img src="<c:url value="/resources/images/${car.registration}.png"></c:url>" alt="image"  style = "width:100%"/>
 				
 						<div class="caption" style="width:100%"/>
-							<h3>
-								<strong>Model: </strong>${car.model}</h3>
-							<p>
-								<strong>Description: </strong>${car.description}</p>
-							<p>
-								<strong>Registration: </strong><span class="label label-info">${car.registration}</span>
-							</p>
-							<p>
-								<strong>Body: </strong>${car.body}</p>
-							<p>
-								<strong>Fuel type: </strong>${car.fuel}</p>
-							<p>
-								<strong>Color: </strong>${car.color}</p>
-							<p>
-								<strong>Trunk size: </strong>${car.trunk} cm3
-							</p>
+						    <h4><strong>${car.make} ${car.model}</strong></h4>
+							<h5>${car.engine.capacity} ${car.engine.type}</h5>
+							<p>${car.color} ${car.body}</p>
+							
+							<strong>Trunk size: </strong>${car.trunk} cm3
+						
 							<p>
 								<strong>Price: </strong>${car.price} euro/day
 							</p>
-
-							<a href=" <spring:url value="/cars/car/${car.carId}"/>"
-								class="btn btn-warning"> <span
-								class="glyphicon-shopping-cart glyphicon" /></span> Rent Now
-							</a>
 							
 							<a href="<spring:url value="/cars/car/${car.carId}"/>"
 								class="btn btn-info"> <span

@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row">
 			
-			<span>${model.test}</span>
+		
 			
 				<div class="form-group">
 					<h3>
@@ -37,7 +37,7 @@
 					<span>${car.body}</span><br/>
 					</h4>
 					
-					year: <span>${car.year}</span><br/>
+
 					mileage: <span>${car.kilometers}</span><br/>
 					fuel: <span>${car.fuel}</span><br/>
 					price: <span>${car.price}</span> euro/hour<br/>
@@ -52,6 +52,10 @@
 					<span>${car.registration}</span>
 				</div>
 				
+				<a href="<spring:url value="/cars/edit/${car.carId}"/>"
+								class="btn btn-info"> <span
+								class="glyphicon-info-sign glyphicon" /></span> Edit
+				</a>
 
 		
 			

@@ -3,6 +3,7 @@ package com.paweljarosz.trac.web.services;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class RentalService {
 		Driver d = driverService.findDriverByNameAndSurname(s[0],s[1]);
 		rental.setDriver(d);
 		rentalRepository.save(rental);
+	}
+	
+	public List<Rental> getRentals() {
+		return rentalRepository.findAll();
 	}
 }

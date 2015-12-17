@@ -72,12 +72,12 @@
 				
 				<div class="form-group">
 					<label for="returnPoint">
-						<spring:message code="addRental.form.to.label"/>
+						<spring:message code="addRental.form.point.label"/>
 					</label>
 					<form:input id="returnPoint" path="returnPoint" maxlength="100" cssClass="form-control"/>
 					<form:errors path="returnPoint"/>
 				</div>
-
+				<br/>
 				<button type="submit" class="btn btn-default">Submit</button>
 
 			</form:form>

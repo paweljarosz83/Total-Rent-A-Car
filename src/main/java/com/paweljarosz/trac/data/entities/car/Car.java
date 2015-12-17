@@ -10,6 +10,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -63,7 +64,7 @@ public class Car {
 	@Column(name="PRICE")
 	private Integer price;
 
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name="CAR_EQUIPMENTS",joinColumns=@JoinColumn(name="CAR_ID"))
 	@Column(name="EQUIPMENT")
 	private List<String> equipments = new ArrayList<String>();

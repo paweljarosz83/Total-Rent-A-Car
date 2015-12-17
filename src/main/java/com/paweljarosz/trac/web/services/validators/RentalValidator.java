@@ -30,6 +30,9 @@ public class RentalValidator implements Validator{
 		if (rental.getFrom().length() < MIN_LENGTH || !isValidToDate(rental)) {
 			errors.rejectValue("to", "rental.to", "");
 		}
+		if (rental.getFrom().length() < MIN_LENGTH) {
+			errors.rejectValue("returnPoint", "rental.returnPoint", "");
+		}
 	}
 
 	private boolean isValidFromDate(Rental rental) {
