@@ -18,10 +18,8 @@ public class CarDaoImpl extends BaseDaoImpl implements CarDao{
 	
 	@Override
 	public void addCar(Car car) {
-		System.out.println("addCar");
 		em.persist(car);
-		Session session = em.unwrap(Session.class);
-		System.out.println(session+"session");
+		//Session session = em.unwrap(Session.class);
 	}
 
 	@Override
@@ -44,4 +42,40 @@ public class CarDaoImpl extends BaseDaoImpl implements CarDao{
 		query.setParameter("make", make);
 		return query.getResultList();
 	}
+
+	@Override
+	public Car findCarByRegistration(String registration) {
+		System.out.println("findbyid");
+		TypedQuery query = em.createQuery("SELECT c FROM Car c WHERE c.registration =:registration",Car.class);
+		query.setParameter("registration", registration);
+		System.out.println(query.getSingleResult());
+		
+		return (Car) query.getSingleResult();
+	}
+
+	@Override
+	public void mergeCar(Car car,Car existingCar) {
+	 
+		existingCar.setBody(car.getBody());
+		existingCar.setColor(car.getColor());
+		existingCar.setDescription(car.getDescription());
+		existingCar.setDrive(car.getDrive());
+		existingCar.setEngine(car.getEngine());
+		existingCar.setEquipments(car.getEquipments());
+		existingCar.setFuel(car.getFuel());
+		existingCar.setKilometers(car.getKilometers());
+		existingCar.setMake(car.getMake());
+		existingCar.setModel(car.getModel());
+		existingCar.setPrice(car.getPrice());
+		existingCar.setRegistration(car.getRegistration());
+		existingCar.setTransmission(car.getTransmission());
+		existingCar.setTrunk(car.getTrunk());
+		em.merge(existingCar);	
+	}
 }
+
+
+
+
+
+

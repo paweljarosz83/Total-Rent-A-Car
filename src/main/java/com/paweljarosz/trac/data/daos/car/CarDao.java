@@ -12,5 +12,11 @@ public interface CarDao extends BaseDao{
 	public Car findById(Long id);
 	
 	public List<Car> getCars();
+
+	public Car findCarByRegistration(String registration);
+
+	public void mergeCar(Car car, Car existingCar);
+
+
 	
 }

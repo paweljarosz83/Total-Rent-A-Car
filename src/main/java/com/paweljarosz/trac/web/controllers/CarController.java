@@ -63,7 +63,6 @@ public class CarController {
 	public String saveCar(@Valid @ModelAttribute Car car,Errors errors, Model model){
 		initFormComponents(model);
 		if(!errors.hasErrors()){
-			carService.saveCar(car);
 			return "redirect:/cars/cars";
 		}else{
 			return "addCar";
@@ -71,7 +70,7 @@ public class CarController {
 	}
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
-		binder.addValidators(new CarValidator());
+		binder.addValidators(new CarValidator(carService));
 	}
 	
 	@RequestMapping(value="/review")
@@ -95,10 +94,7 @@ public class CarController {
 	
 	@RequestMapping(value="/edit/{Id}")
 	public String editCar(Model model,@PathVariable Long Id){
-		System.out.println(Id);
-
 		initFormComponents(model);
-		//model.addAttribute("car",this.carRepository.getOne(Id));
 		model.addAttribute("car",car);
 		return "addCar";
 	}

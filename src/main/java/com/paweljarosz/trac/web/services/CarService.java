@@ -22,4 +22,17 @@ public class CarService {
 	public List<Car> getCars() {
 		return carDao.getCars();
 	}
+
+	public Car findCarByRegistration(String registration) {
+		try {
+			return carDao.findCarByRegistration(registration);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public void mergeCar(Car car, Car existingCar) {
+		carDao.mergeCar(car,existingCar);
+		
+	}
 }
