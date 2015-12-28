@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="DRIVER")
@@ -36,6 +37,9 @@ public class Driver {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ADDRESS_ID")
 	private Address address;
+	
+	@Transient
+	private boolean editing;
 		
 	public String getName() {
 		return name;
@@ -69,5 +73,11 @@ public class Driver {
 	}
 	public void setPersonalIdentificationNumber(String personalIdentificationNumber) {
 		this.personalIdentificationNumber = personalIdentificationNumber;
+	}
+	public boolean isEditing() {
+		return editing;
+	}
+	public void setEditing(boolean editing) {
+		this.editing = editing;
 	}
 }

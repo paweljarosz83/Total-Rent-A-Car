@@ -24,8 +24,8 @@ public class Licence {
 	@Column(name="CATEGORY")
 	private String category;
 	
-	@OneToOne(mappedBy="licence")
-	private Driver driver;
+	//@OneToOne(mappedBy="licence")
+	//private Driver driver;
 
 	
 	
@@ -42,12 +42,12 @@ public class Licence {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public Driver getDriver() {
-		return driver;
-	}
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
+//	public Driver getDriver() {
+//		return driver;
+//	}
+//	public void setDriver(Driver driver) {
+//		this.driver = driver;
+//	}
 	public Long getLicenceId() {
 		return licenceId;
 	}

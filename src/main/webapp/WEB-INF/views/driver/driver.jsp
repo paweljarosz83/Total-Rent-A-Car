@@ -25,10 +25,13 @@
 		
 			
 				<div class="form-group">
-					<h3><span>${driver.name} ${driver.surname}</span></h3>
+					<h2><span>${driver.name} ${driver.surname}</span></h2>
+					<h4><spring:message code="driver.details.address"/></h4>
 					<span>${driver.address.street} ${driver.address.number} ${driver.address.post} ${driver.address.city}</span>
+					<h4><spring:message code="driver.details.licence.number"/></h4>
 					<span>${driver.licence.number}</span>
-					<span>${driver.licence.number}</span>
+					<h4><spring:message code="driver.details.licence.category"/></h4>
+					<span>${driver.licence.category}</span>
 				
 				</div>
 							

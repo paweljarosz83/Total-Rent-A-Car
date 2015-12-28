@@ -30,4 +30,12 @@ public class DriverDaoImpl extends BaseDaoImpl implements DriverDao{
 		return query.getSingleResult();
 	}
 
+	@Override
+	public void updateDriver(Driver newDriver, Driver existingDriver) {
+		existingDriver.setName(newDriver.getName());
+		existingDriver.setSurname(newDriver.getSurname());
+		existingDriver.setAddress(newDriver.getAddress());
+		existingDriver.setLicence(newDriver.getLicence());
+		em.merge(existingDriver);	
+	}
 }

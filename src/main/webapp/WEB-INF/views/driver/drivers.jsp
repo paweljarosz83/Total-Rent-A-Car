@@ -23,7 +23,7 @@
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-				    <th>Driver</th><th>Street</th><th>Number</th><th>City</th><th>Post code</th>
+				    <th>Driver</th><th>Street</th><th>Number</th><th>City</th><th>Post code</th><th>Licence number</th><th>Licence category</th>
 				</tr>
 				<c:forEach items="${drivers}" var="driver">
 					<tr>
@@ -32,6 +32,8 @@
 						<td>${driver.address.number}</td>
 						<td>${driver.address.city}</td>
 						<td>${driver.address.post}</td>
+						<td>${driver.licence.number}</td>
+						<td>${driver.licence.category}</td>
 					</tr>	
 				</c:forEach>
 			</tbody>
