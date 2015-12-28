@@ -22,9 +22,10 @@ import com.paweljarosz.trac.web.services.validators.DriverValidator;
 @Controller
 @RequestMapping("/drivers")
 public class DriverController {
-	
+
 	@Autowired
 	DriverService driverService;
+	private Driver driver;
 
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String addDriver(@ModelAttribute("driver")Driver driver,Model model,BindingResult result){
@@ -38,22 +39,28 @@ public class DriverController {
 		}else{
 			return "driver\\addDriver";
 		}
-		
-	
-		
 	}
+	//find single driver
+	@RequestMapping(value="/driver/{Id}")
+	public String findOne(Model model, @PathVariable Long Id){
+		driver = this.driverService.findOne(Id);
+		model.addAttribute("driver",driver);
+		return "driver\\driver";
+	}
+
+	@RequestMapping(value="/edit/{Id}")
+	public String editCar(Model model,@PathVariable Long Id){
+		model.addAttribute("driver",driver);
+		return "addDriver";
+	}
+
 	//find all drivers
 	@RequestMapping(value="/drivers")
 	public String find(Model model){
 		model.addAttribute("drivers", this.driverService.getDrivers());
 		return "driver\\drivers";
 	}
-	//find single driver
-	@RequestMapping(value="/driver/{Id}")
-	public String findOne(Model model, @PathVariable Long Id){
-		model.addAttribute("driver",this.driverService.findOne(Id));
-		return "driver\\driver";
-	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
 		binder.addValidators(new DriverValidator(driverService));

@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<jsp:include page="../views/fragments/header.jsp"></jsp:include>
+	<jsp:include page="../../views/fragments/header.jsp"></jsp:include>
 	
 	<div class="container">
 		<div class="row">
@@ -165,8 +165,13 @@
 	<section>
     	<div class="jumbotron">
       		<div class="container">
-        		<h1>Cars</h1>
-        		<p>Add new car</p>
+        		<h2><spring:message code="footer.car"/></h2>
+        		<p><spring:message code="footer.car.add"/></p>
+        		<h5>
+        		<spring:message code="footer.company"/>
+        		<spring:message code="footer.address"/>
+        		<spring:message code="footer.phone"/>
+        		</h5>
       		</div>
     	</div>
  	</section>

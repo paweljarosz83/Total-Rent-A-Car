@@ -33,4 +33,8 @@ public class DriverService {
 	public Driver findDriverByNameAndSurname(String name,String surname){
 		return dao.findDriverByNameAndSurname(name,surname);
 	}
+
+	public Driver findDriverByPersonalIdentificationNumber(String personalIdentificationNumber) {
+		return dao.findDriverByPersonalIdentificationNumber(personalIdentificationNumber);
+	}
 }

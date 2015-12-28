@@ -9,4 +9,6 @@ public interface DriverDao extends BaseDao {
 	public List<Driver>getDrivers();
 
 	public Driver findDriverByNameAndSurname(String name, String surname);
+
+	public Driver findDriverByPersonalIdentificationNumber(String personalIdentificationNumber);
 }

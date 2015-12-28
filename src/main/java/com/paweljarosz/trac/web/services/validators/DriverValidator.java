@@ -61,7 +61,7 @@ public class DriverValidator implements Validator{
 			errors.rejectValue("licence.category", "driver.licence.category", "");
 		}
 		if(checkDriverAlreadyExists(driver)){
-			errors.rejectValue("surname", "driver.surname.duplicate", "");
+			errors.rejectValue("personalIdentificationNumber", "driver.id.duplicate", "");
 		}
 	}
 	private boolean checkDriverAlreadyExists(Driver driver) {
@@ -69,7 +69,8 @@ public class DriverValidator implements Validator{
 			if (driver.getName() == null || driver.getSurname() == null) {
 				return false;
 			} else {
-				Driver d = driverService.findDriverByNameAndSurname(driver.getName(), driver.getSurname());
+				//Driver d = driverService.findDriverByNameAndSurname(driver.getName(), driver.getSurname());
+				Driver d = driverService.findDriverByPersonalIdentificationNumber(driver.getPersonalIdentificationNumber());
 				if (d == null) {
 					return false;
 				}

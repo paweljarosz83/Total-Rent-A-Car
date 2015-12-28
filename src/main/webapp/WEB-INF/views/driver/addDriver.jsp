@@ -99,16 +99,22 @@
 				<br/>
 				
 				<button type="submit" class="btn btn-default">Submit</button>
-						
 			</form:form>
+			</br>
+			</br>
 		</div>
 	</div>
 	
 		<section>
     	<div class="jumbotron">
       		<div class="container">
-        		<h1>Drivers</h1>
-        		<p>Add new driver</p>
+        		<h2><spring:message code="footer.driver"/></h2>
+        		<p><spring:message code="footer.driver.add"/></p>
+        		<h5>
+        		<spring:message code="footer.company"/>
+        		<spring:message code="footer.address"/>
+        		<spring:message code="footer.phone"/>
+        		</h5>
       		</div>
     	</div>
  	</section>
