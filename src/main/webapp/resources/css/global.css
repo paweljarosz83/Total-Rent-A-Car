@@ -3,9 +3,19 @@
 	font-weight: normal;
 	padding: 0px 10px;
 }
+
 .jumbotron{
      background-repeat:no-repeat;
-     padding:000px 0 000px 0;
-     margin-bottom:0px;
-     background-color:#770533;
+     padding:000px 0 000px 0 !important;
+     margin-bottom:0px !important;
+     background-color:#D46917 !important;
 	 }
+body{
+	background-color:#69A8B8 !important;
+	
+}
+
+.navbar-default {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}

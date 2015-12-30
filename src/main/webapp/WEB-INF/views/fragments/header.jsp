@@ -6,8 +6,11 @@
 <head>
 <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="<spring:url value="/resources/css/global.css"/>" type="text/css" />
+
 </head>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 		
 			<div class="navbar-header">
@@ -55,7 +58,7 @@
         		
         		
         		
-        		<li><a href="<spring:url value="/cars/find/available"/>">Statistics</a></li>
+        		<!-- <li><a href="<spring:url value="/cars/find/available"/>">Statistics</a></li> -->
     		</ul>
     		
     		<ul class="nav navbar-nav navbar-right">

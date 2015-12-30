@@ -32,11 +32,10 @@ import com.paweljarosz.trac.web.services.validators.CarValidator;
 @RequestMapping("/cars")
 public class CarController {
 
-	@Autowired
-	private CarRepository carRepository;
+	private Car car;
+	
 	@Autowired
 	private CarService carService;
-	private Car car;
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String addCar(@ModelAttribute("car") Car car,Model model, BindingResult result){
@@ -84,10 +83,10 @@ public class CarController {
 		return "car\\cars";
 	}
 	
-	@RequestMapping(value="/car/{Id}")
-	public String findCar(Model model, @PathVariable Long Id){
-		car  = this.carRepository.findOne(Id);
-		model.addAttribute("car",this.carRepository.findOne(Id));
+	@RequestMapping(value="/car/{id}")
+	public String findCar(Model model, @PathVariable Long id){
+		car = carService.findCarById(id);
+		model.addAttribute("car",car);
 		return "car\\car";
 	}
 	
