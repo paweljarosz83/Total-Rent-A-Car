@@ -11,7 +11,7 @@
      background-color:#D46917 !important;
 	 }
 body{
-	background-color:#69A8B8 !important;
+	background-color:#dce4e3!important;
 	
 }
 
@@ -19,3 +19,17 @@ body{
     background-color: #F8F8F8;
     border-color: #E7E7E7;
 }
+#details-table
+{
+   float: left;
+   width: 334px;
+}
+.borderless table {
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}
+.details-title {color: #538591;  font-family:"Verdana";  font-size: 36px;}
+.details-sub {color: #538591;  font-family:"Verdana";  font-size: 22px;}
+.details-subsub {color: #538591;  font-family:"Tahoma";  font-size: 14px;}

@@ -1,76 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Project Manager</title>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
-	<link rel="stylesheet" href="<spring:url value="/resources/css/bootstrap-select.min.css"/>" type="text/css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="<spring:url value="/resources/js/bootstrap-select.min.js"/>"></script>
-
+<title><spring:message code="car.details.title" /></title>
 </head>
 <body>
 
 	<jsp:include page="../../views/fragments/header.jsp"></jsp:include>
-	
+
 	<div class="container">
 		<div class="row">
-			
-		
-			
-				<div class="form-group">
-					<h3>
-					<span>${car.make} </span>
-					<span>${car.model}</span>
-					<span>${car.engine.capacity}</span>
-					<span>${car.engine.type}</span><br/>
-					</h3>
-					
-					<h4>
-					<span>${car.color} </span>
-					<span>${car.body}</span><br/>
-					</h4>
-					
 
-					mileage: <span>${car.kilometers}</span><br/>
-					fuel: <span>${car.fuel}</span><br/>
-					price: <span>${car.price}</span> euro/hour<br/>
-					drive: <span>${car.drive}</span><br/>
-					transmission: <span>${car.transmission}</span><br/>
-					trunk size: <span>${car.trunk}</span>
-					<span>${car.description}</span>
-				</div>
-							
-				<div class="form-group">
-					<label for="registration">Registration number</label>
-					<span>${car.registration}</span>
-				</div>
+			<div class="form-group">
 				
-				<a href="<spring:url value="/cars/edit/${car.carId}"/>"
-								class="btn btn-info"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Edit
-				</a>
+					<span class="details-title"><b>${car.make} ${car.model}</b></span><br/>
+					<span class="details-sub">${car.engine.capacity} ${car.engine.type} ${car.engine.power} <spring:message code="car.details.power.unit" /></span><br/>
+					<span class="details-subsub">${car.color} ${car.body}</span><br />
+					</br>
+				<div id="details-table">
+					<table class='table borderless'>
+						<tr>
+							<td><spring:message code="car.details.kilometers" /></td>
+							<td><span>${car.kilometers} km</span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.fuel" /></td>
+							<td><span>${car.fuel}</span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.price" /></td>
+							<td><span class="white">${car.price} euro/hour </span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.drive" /></td>
+							<td><span>${car.drive}</span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.transmission" /></td>
+							<td><span>${car.transmission}</span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.trunk" /></td>
+							<td><span>${car.trunk} cm3</span></td>
+						</tr>
+						<tr>
+							<td><spring:message code="car.details.description" /></td>
+							<td><span>${car.description}  ${car.equipments}</span></td>
+						</tr>
+					</table>
+				
+			
+					<div class="form-group">
+						<label for="registration"><spring:message
+								code="car.details.registration" /></label> <span>${car.registration}</span>
+					</div>
+
+					<a href="<spring:url value="/cars/edit/${car.carId}"/>"
+						class="btn btn-info"> <span
+						class="glyphicon-info-sign glyphicon" /></span>
+						 <spring:message code="button.edit" />
+					</a>
+				</div>
+			</div>
+			</div>
 		</div>
 	</div>
-	
-			<section>
-    	<div class="jumbotron">
-      		<div class="container">
-        		<h2><spring:message code="footer.car"/></h2>
-        		<h5>
-        		<spring:message code="footer.company"/>
-        		<spring:message code="footer.address"/>
-        		<spring:message code="footer.phone"/>
-        		</h5>
-      		</div>
-    	</div>
- 	</section>
-	
 </body>
 </html>

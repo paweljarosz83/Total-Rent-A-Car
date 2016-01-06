@@ -8,17 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>TRAC::Total Rent a Car</title>
 
-   
-
 	<link rel="stylesheet" href="<spring:url value="/resources/css/global.css"/>" type="text/css" />
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="<spring:url value="/resources/js/bootstrap-select.min.js"/>"></script>
-	
-	
-	
-	
 	
 </head>
 <body>
@@ -67,7 +61,7 @@
 					<label for="capacity">
 						<spring:message code="addCar.form.engine.capacity.label"/>
 					</label>
-					<form:input id="capacity" path="engine.capacity" type="number" min="1" max="5000" maxlength="5" cssClass="form-control" />
+					<form:input id="capacity" path="engine.capacity" type="number" min="1" max="5000" maxlength="5" step="any" cssClass="form-control" />
 					<form:errors path="engine.capacity"/>
 				</div>				
 				<div class="form-group">

@@ -39,17 +39,6 @@
 		</table>
 	</div>
 	
-		<section>
-    	<div class="jumbotron">
-      		<div class="container">
-        		<h2><spring:message code="footer.car"/></h2>
-        		<h5>
-        		<spring:message code="footer.company"/>
-        		<spring:message code="footer.address"/>
-        		<spring:message code="footer.phone"/>
-        		</h5>
-      		</div>
-    	</div>
- 	</section>
+
 </body>
 </html>
