@@ -14,7 +14,7 @@ public class RentalDTO {
 	private boolean euTravel;
 	private long driver;
 	private String nameAndSurname;
-	private String carRegistrations;
+	private String carDetails;
 	public Long getRentalId() {
 		return rentalId;
 	}
@@ -69,11 +69,12 @@ public class RentalDTO {
 	public void setNameAndSurname(String nameAndSurname) {
 		this.nameAndSurname = nameAndSurname;
 	}
-	public String getCarRegistrations() {
-		return carRegistrations;
+	public String getCarDetails() {
+		return carDetails;
 	}
-	public void setCarRegistrations(String carRegistrations) {
-		this.carRegistrations = carRegistrations;
+	public void setCarDetails(String carDetails) {
+		this.carDetails = carDetails;
 	}
+
 
 }

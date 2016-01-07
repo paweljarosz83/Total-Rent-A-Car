@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Rentals</title>
+<title><spring:message code="car.cars.title" /></title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -21,7 +21,14 @@
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-					<th>Registration</th><th>Model</th><th>Make</th><th>Body</th><th>Fuel</th><th>Horse Power</th><th>Engine Type</th><th>Price</th>
+					<th><spring:message code="car.cars.registration" /></th>
+					<th><spring:message code="car.cars.model" /></th>
+					<th><spring:message code="car.cars.make" /></th>
+					<th><spring:message code="car.cars.body" /></th>
+					<th><spring:message code="car.cars.fuel" /></th>
+					<th><spring:message code="car.cars.horsepower" /></th>
+					<th><spring:message code="car.cars.engine" /></th>
+					<th><spring:message code="car.cars.price" /></th>
 				</tr>
 				<c:forEach items="${cars}" var="car">
 					<tr>

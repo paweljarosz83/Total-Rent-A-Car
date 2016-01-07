@@ -33,3 +33,6 @@ body{
 .details-title {color: #538591;  font-family:"Verdana";  font-size: 36px;}
 .details-sub {color: #538591;  font-family:"Verdana";  font-size: 22px;}
 .details-subsub {color: #538591;  font-family:"Tahoma";  font-size: 14px;}
+
+.footer-info {color:#8f5122; font-family:"Verdana";  font-size: 34px;}
+.footer-company {color:#8f5122; font-family:"Tahoma";  font-size: 14px;}

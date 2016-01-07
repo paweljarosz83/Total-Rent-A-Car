@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Car Manager</title>
+<title><spring:message code="driver.drivers.title" /></title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -23,7 +23,13 @@
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-				    <th>Driver</th><th>Street</th><th>Number</th><th>City</th><th>Post code</th><th>Licence number</th><th>Licence category</th>
+				    <th><spring:message code="driver.drivers.driver" /></th>
+				    <th><spring:message code="driver.drivers.street" /></th>
+				    <th><spring:message code="driver.drivers.number" /></th>
+				    <th><spring:message code="driver.drivers.city" /></th>
+				    <th><spring:message code="driver.drivers.post" /></th>
+				    <th><spring:message code="driver.drivers.licence" /></th>
+				    <th><spring:message code="driver.drivers.category" /></th>
 				</tr>
 				<c:forEach items="${drivers}" var="driver">
 					<tr>

@@ -107,19 +107,20 @@
 		</div>
 	</div>
 	
-		<section>
-    	<div class="jumbotron">
-      		<div class="container">
-        		<h2><spring:message code="footer.driver"/></h2>
-        		<p><spring:message code="footer.driver.add"/></p>
-        		<h5>
-        		<spring:message code="footer.company"/>
-        		<spring:message code="footer.address"/>
-        		<spring:message code="footer.phone"/>
-        		</h5>
-      		</div>
-    	</div>
- 	</section>
+	<section>
+		<div class="jumbotron">
+			<div class="container">
+				<span class="footer-info">
+					<spring:message code="footer.driver.add" /> 
+				</span>
+				<br/>
+				<span class="footer-company">
+					<spring:message code="footer.company" /> <spring:message code="footer.address" />
+					<spring:message code="footer.phone" />
+				</span>
+			</div>
+		</div>
+	</section>
 	
 </body>
 </html>

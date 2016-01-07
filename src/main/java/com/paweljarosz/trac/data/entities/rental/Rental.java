@@ -31,117 +31,101 @@ public class Rental {
 	@Column(name="RETURN_DATE")
 	private Date returnDate;
 	
-	@Transient
-	private String from;
-	@Transient
-	private String to;
-	
 	@Column(name="RETURN_POINT")
 	private String returnPoint;
 	
-//	@Column
-//	private Agent agent;
-//	
-//	@Column
-//	private Integer mileageBefore;
-//	
-//	@Column
-//	private boolean euTravel;
-
-	public String getReturnPoint() {
-		return returnPoint;
-	}
-	public void setReturnPoint(String returnPoint) {
-		this.returnPoint = returnPoint;
-	}
-	public Date getPickupDate() {
-		return pickupDate;
-	}
-	public void setPickupDate(Date pickupDate) {
-		this.pickupDate = pickupDate;
-	}
-	public String getFrom() {
-		return from;
-	}
-	public void setFrom(String from) {
-		this.from = from;
-	}
-	public String getTo() {
-		return to;
-	}
-	public void setTo(String to) {
-		this.to = to;
-	}
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
-	}
 	@ManyToOne
 	@JoinColumn(name="DRIVER_ID")
 	private Driver driver;
 	
+	@ManyToOne
+	@JoinColumn(name="CAR_ID")
+	private Car car;
+	
+	@Transient
+	private String from;
+	@Transient
+	private String to;
 	@Transient
 	private String nameAndSurname;
-
-	private String carRegistrations;
 	
-	public String getNameAndSurname() {
-		return nameAndSurname;
-	}
-	public void setNameAndSurname(String nameAndSurname) {
-		this.nameAndSurname = nameAndSurname;
+	private String carDetails;
+
+	public Date getPickupDate() {
+		return pickupDate;
 	}
 
-
-	
-	//@ManyToOne
-	//@JoinColumn(name="CAR_ID")
-	//private Car car;
-//	public Car getCar() {
-//		return car;
-//	}
-//	public void setCar(Car car) {
-//		this.car = car;
-//	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-public String getCarRegistrations() {
-		return carRegistrations;
+	public void setPickupDate(Date pickupDate) {
+		this.pickupDate = pickupDate;
 	}
-	public void setCarRegistrations(String carRegistrations) {
-		this.carRegistrations = carRegistrations;
+
+	public Date getReturnDate() {
+		return returnDate;
+	}
+
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+
+	public String getReturnPoint() {
+		return returnPoint;
+	}
+
+	public void setReturnPoint(String returnPoint) {
+		this.returnPoint = returnPoint;
 	}
 
 	public Driver getDriver() {
 		return driver;
 	}
+
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
+
+	public Car getCar() {
+		return car;
+	}
+
+	public void setCar(Car car) {
+		this.car = car;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public String getNameAndSurname() {
+		return nameAndSurname;
+	}
+
+	public void setNameAndSurname(String nameAndSurname) {
+		this.nameAndSurname = nameAndSurname;
+	}
+
+	
+
+	public String getCarDetails() {
+		return carDetails;
+	}
+
+	public void setCarDetails(String carDetails) {
+		this.carDetails = carDetails;
+	}
+
 	public Long getRentalId() {
 		return rentalId;
 	}
-	public Date getReturnDate() {
-		return returnDate;
-	}
-
-
-
 }

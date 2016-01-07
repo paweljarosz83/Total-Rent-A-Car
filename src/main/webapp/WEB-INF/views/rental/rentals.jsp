@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Rentals</title>
+<title><spring:message code="rental.rentals.title" /></title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -23,18 +23,23 @@
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-				    <th>Driver</th><th>Car</th><th>From</th><th>To</th>
+				    <th><spring:message code="rental.rentals.driver" /></th>
+				    <th><spring:message code="rental.rentals.car" /></th>
+				    <th><spring:message code="rental.rentals.from" /></th>
+				    <th><spring:message code="rental.rentals.to" /></th>
+				    <th><spring:message code="rental.rentals.returnpoint" /></th>
 				</tr>
 				<c:forEach items="${rentals}" var="rental">
 					<tr>
+						<td>${rental.driver.name} ${rental.driver.surname}</td>
+						<td>${rental.carDetails}</td>
 						<td>${rental.pickupDate}</td>
 						<td>${rental.returnDate}</td>
+						<td>${rental.returnPoint}</td>
 					</tr>	
 				</c:forEach>
 			</tbody>
 		</table>
-		
-
 	</div>
 </body>
 </html>

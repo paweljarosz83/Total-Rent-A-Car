@@ -36,27 +36,26 @@ public class RentalController {
 
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	private String addRental(@ModelAttribute("rental")Rental rental,Model model){
-
 		initComponents(model);
-
 		return "rental\\addRental";
 	}
 
-
 	private void initComponents(Model model) {
 		List<Driver>drivers = driverService.getDrivers();
-		List<String>driverNames = new ArrayList<String>();
+		List<String>driverDetails = new ArrayList<String>();
 		for(Driver d:drivers){
-			driverNames.add(d.getName()+" "+d.getSurname()+" "+d.getPersonalIdentificationNumber());
+			driverDetails.add(d.getName()+" "+d.getSurname()+" "+d.getPersonalIdentificationNumber());
 		}
-		model.addAttribute("driverNames",driverNames);
+		model.addAttribute("driverDetails",driverDetails);
 
 		List<Car>cars = carService.getCars();
-		List<String>carRegistrations = new ArrayList<String>();
+		
+		List<String>carDetails = new ArrayList<String>();
+		
 		for(Car c:cars){
-			carRegistrations.add(c.getRegistration()+" "+c.getMake()+" "+c.getModel());
+			carDetails.add(c.getRegistration()+" "+c.getMake()+" "+c.getModel());
 		}
-		model.addAttribute("carRegistrations",carRegistrations);
+		model.addAttribute("carDetails",carDetails);
 	}
 
 
@@ -67,12 +66,10 @@ public class RentalController {
 			rentalService.saveRental(rental);
 			return "redirect:/rentals/rentals";
 		}else{
-			//return "redirect:/rentals/add";
 			return "rental\\addRental";
 		}
 	}
 	
-	//find all drivers
 	@RequestMapping(value="/rentals")
 	public String find(Model model){
 		model.addAttribute("rentals", this.rentalService.getRentals());

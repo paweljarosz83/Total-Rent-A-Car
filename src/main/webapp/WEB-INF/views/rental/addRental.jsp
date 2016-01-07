@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TRAC::Total Rent a Car</title>
+<title><spring:message code="rental.add.title" /></title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -39,10 +39,10 @@
 
 
 				<div class="form-group">
-					<label for="driverName"> <spring:message
+					<label for="driverDetails"> <spring:message
 							code="addRental.form.drivers.label" />
 					</label>
-					<form:select path="nameAndSurname" items="${driverNames}"
+					<form:select path="nameAndSurname" items="${driverDetails}"
 						cssClass="selectpicker" />
 				</div>
 
@@ -50,7 +50,7 @@
 					<label for="carRegistration"> <spring:message
 							code="addRental.form.registrations.label" />
 					</label>
-					<form:select path="carRegistrations" items="${carRegistrations}"
+					<form:select path="carDetails" items="${carDetails}"
 						cssClass="selectpicker" />
 				</div>
 
@@ -78,20 +78,27 @@
 					<form:errors path="returnPoint"/>
 				</div>
 				<br/>
-				<button type="submit" class="btn btn-default">Submit</button>
-
+				<button type="submit" class="btn btn-default"><spring:message code="button.submit"/></button>
+				<br/>
+				<br/>
 			</form:form>
 		</div>
 	</div>
 
 	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Drivers</h1>
-				<p>Add new driver</p>
-			</div>
-		</div>
-	</section>
+    	<div class="jumbotron">
+      		<div class="container">
+      			<span class="footer-info">
+        			<spring:message code="footer.rental.add"/>
+        		</span>
+				<br/>
+				<span class="footer-company">
+					<spring:message code="footer.company" /> <spring:message code="footer.address" />
+					<spring:message code="footer.phone" />
+				</span>
+      		</div>
+    	</div>
+ 	</section>
 
 </body>
 </html>
