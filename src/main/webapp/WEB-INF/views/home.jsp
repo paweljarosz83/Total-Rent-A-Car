@@ -7,13 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Available Cars</title>
+<title><spring:message code="home.title" /></title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="<spring:url value="/resources/css/bootstrap-select.min.css"/>"
-	type="text/css" />
 <link rel="stylesheet"
 	href="<spring:url value="/resources/css/global.css"/>" type="text/css" />
 <script
@@ -34,29 +29,45 @@
 			<c:forEach items="${cars}" var="car">
 				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
 					<div class="thumbnail">
-				
-					  <img src="<c:url value="/resources/images/${car.registration}.png"></c:url>" alt="image"  style = "width:100%"/>
-				
-						<div class="caption" style="width:100%"/>
-						    <h4><strong>${car.make} ${car.model}</strong></h4>
-							<h5>${car.engine.capacity} ${car.engine.type}</h5>
-							<p>${car.color} ${car.body}</p>
-							
-							<strong>Trunk size: </strong>${car.trunk} cm3
-						
-							<p>
-								<strong>Price: </strong>${car.price} euro/day
-							</p>
-							
-							<a href="<spring:url value="/cars/car/${car.carId}"/>"
-								class="btn btn-info"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Details
-							</a>
-						</div>
+						<!-- 
+						<img
+							src="<c:url value="/resources/images/${car.registration}.png"></c:url>"
+							alt="image" style="width: 100%" />
+						 -->	
+
+						<div class="caption" style="width: 100%" />
+						<h4>
+							<strong>${car.make} ${car.model}</strong>
+						</h4>
+						<h5>${car.engine.capacity}${car.engine.type}</h5>
+						<p>${car.color}${car.body}</p>
+
+						<p>
+							<strong><spring:message code="home.price" /></strong>${car.price}
+							euro/day
+						</p>
+
+						<a href="<spring:url value="/cars/car/${car.carId}"/>"
+							class="btn btn-info"> <span
+							class="glyphicon-info-sign glyphicon" /></span> <spring:message
+								code="home.details" />
+						</a>
 					</div>
 				</div>
-			</c:forEach>
+		</div>
+		</c:forEach>
+		<div class="home-placeholder"></div>
 		</div>
 	</section>
+
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="centre">
+			<span class="footer-company"> 
+			<spring:message code="footer.company" /> 
+			<spring:message code="footer.phone" />
+			</span>
+		</div>
+	</div>
+	
 </body>
 </html>

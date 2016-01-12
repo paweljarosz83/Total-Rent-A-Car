@@ -163,29 +163,36 @@
 					<form:errors path="price" />
 				</div>
 				</br>
-
+				<!--  
+				<spring:url value="/resource/upload" var="uploadUrl"/>
+				<form method="POST" enctype="multipart/form-data" action="${uploadUrl}">
+				<input type="file" name="file"><br/>
+				<input type="submit" value="upload">Laduj Plik</form>
+-->
 				<button type="submit" class="btn btn-default">
 					<spring:message code="button.submit" />
 				</button>
 			</form:form>
-			<br /> <br />
-		</div>
-	</div>
+			<br />
+			<br />
 
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<span class="footer-info">
-					<spring:message code="footer.car.add" /> 
-				</span>
-				<br/>
-				<span class="footer-company">
-					<spring:message code="footer.company" /> <spring:message code="footer.address" />
-					<spring:message code="footer.phone" />
-				</span>
+
+			
 			</div>
 		</div>
-	</section>
+	</div>
+	
+	<div class="vertical-placeholder"></div>
+
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="centre">
+		
+		<span class="footer-company"> 
+			<spring:message code="footer.company" /> 
+			<spring:message code="footer.phone" />
+			</span>
+		</div>
+	</div>
 	
 </body>
 </html>

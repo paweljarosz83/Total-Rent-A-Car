@@ -36,10 +36,23 @@
 						<td>${rental.pickupDate}</td>
 						<td>${rental.returnDate}</td>
 						<td>${rental.returnPoint}</td>
+						<td><a href="<spring:url value="/rentals/rental/${rental.rentalId}"/>">Delete</a></td>
 					</tr>	
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
+	
+		<div class="vertical-placeholder"></div>
+	
+		<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="centre">
+		
+			<span class="footer-company"> 
+			<spring:message code="footer.company" /> 
+			<spring:message code="footer.phone" />
+			</span>
+		</div>
 	</div>
 </body>
 </html>

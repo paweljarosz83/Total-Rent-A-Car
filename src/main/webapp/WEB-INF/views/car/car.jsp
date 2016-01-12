@@ -75,5 +75,18 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="vertical-placeholder"></div>
+	
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="centre">
+		
+			<span class="footer-company"> 
+			<spring:message code="footer.company" /> 
+			<spring:message code="footer.phone" />
+			</span>
+		</div>
+	</div>
+	
 </body>
 </html>

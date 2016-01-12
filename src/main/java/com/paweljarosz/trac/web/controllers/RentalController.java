@@ -12,6 +12,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -57,7 +58,12 @@ public class RentalController {
 		}
 		model.addAttribute("carDetails",carDetails);
 	}
-
+	
+	@RequestMapping(value="/rental/{Id}")
+	public String delete(Model model, @PathVariable Long Id){
+		rentalService.delete(Id);
+		return "rental\\rentals";
+	}
 
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	public String saveRental(@Valid @ModelAttribute Rental rental,Errors errors,Model model){

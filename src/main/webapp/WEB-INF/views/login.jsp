@@ -8,13 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Products</title>
+
+<title><spring:message code="login.signin"/></title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h2>Total Rent A Car</h2>
+				<span class="logo"><h2>Total Rent A Car</h2></span>
 			</div>
 		</div>
 	</section>

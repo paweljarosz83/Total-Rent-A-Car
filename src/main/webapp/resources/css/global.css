@@ -19,6 +19,26 @@ body{
     background-color: #F8F8F8;
     border-color: #E7E7E7;
 }
+.navbar-default {
+    background-color: #D46917;
+    border-color: #D46917;
+    height: 20px;
+}
+
+#navbar navbar-default navbar-fixed-bottom{
+	background-color:#D46917 !important;
+}
+div.centre
+{
+  padding-top: 15px;  
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+   
 #details-table
 {
    float: left;
@@ -34,5 +54,33 @@ body{
 .details-sub {color: #538591;  font-family:"Verdana";  font-size: 22px;}
 .details-subsub {color: #538591;  font-family:"Tahoma";  font-size: 14px;}
 
-.footer-info {color:#8f5122; font-family:"Verdana";  font-size: 34px;}
+.footer-info {color:#8f5122; font-family:"Verdana";  font-size: 18px;}
 .footer-company {color:#8f5122; font-family:"Tahoma";  font-size: 14px;}
+
+.logo {color:#D46917; font-family:"Tahoma";  font-size: 34px;}
+
+
+.home-placeholder{height: 470px;
+			 width: 150px;
+			 overflow: hidden;
+			 position:relative;
+			 background-color: #dce4e3;
+}
+.vertical-placeholder{height: 170px;
+			 width: 400px;
+			 overflow: hidden;
+			 position:relative;
+			 background-color: #dce4e3;
+}
+
+
+
+
+
+
+
+
+
+
+
+

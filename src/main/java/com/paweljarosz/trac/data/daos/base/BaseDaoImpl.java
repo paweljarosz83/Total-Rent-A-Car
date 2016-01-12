@@ -3,9 +3,12 @@ package com.paweljarosz.trac.data.daos.base;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+@Repository("base")
 @EnableTransactionManagement
 @Transactional
 public class BaseDaoImpl implements BaseDao {
@@ -32,4 +35,5 @@ public class BaseDaoImpl implements BaseDao {
 	public void delete(Object entity) {
 		em.remove(entity);
 	}
+	
 }

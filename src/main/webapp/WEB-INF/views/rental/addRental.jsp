@@ -39,19 +39,18 @@
 
 
 				<div class="form-group">
-					<label for="driverDetails"> <spring:message
-							code="addRental.form.drivers.label" />
+					<label for="driverDetails"> <spring:message code="addRental.form.drivers.label" />
 					</label>
-					<form:select path="nameAndSurname" items="${driverDetails}"
-						cssClass="selectpicker" />
+					<form:select path="nameAndSurname" items="${driverDetails}" cssClass="selectpicker" /></br>
+					<form:errors path="nameAndSurname"/>
 				</div>
 
 				<div class="form-group">
 					<label for="carRegistration"> <spring:message
 							code="addRental.form.registrations.label" />
 					</label>
-					<form:select path="carDetails" items="${carDetails}"
-						cssClass="selectpicker" />
+					<form:select path="carDetails" items="${carDetails}" cssClass="selectpicker" /></br>
+					<form:errors path="carDetails"/>
 				</div>
 
 				<div class="form-group">
@@ -85,20 +84,15 @@
 		</div>
 	</div>
 
-	<section>
-    	<div class="jumbotron">
-      		<div class="container">
-      			<span class="footer-info">
-        			<spring:message code="footer.rental.add"/>
-        		</span>
-				<br/>
-				<span class="footer-company">
-					<spring:message code="footer.company" /> <spring:message code="footer.address" />
-					<spring:message code="footer.phone" />
-				</span>
-      		</div>
-    	</div>
- 	</section>
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="centre">
+		
+		<span class="footer-company"> 
+			<spring:message code="footer.company" /> 
+			<spring:message code="footer.phone" />
+			</span>
+		</div>
+	</div>
 
 </body>
 </html>

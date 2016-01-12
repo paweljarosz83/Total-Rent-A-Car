@@ -24,13 +24,19 @@ public class RentalValidator implements Validator{
 	public void validate(Object obj, Errors errors) {
 		Rental rental = (Rental)obj;
 		
+		if(rental.getNameAndSurname()==null){
+			errors.rejectValue("nameAndSurname", "rental.nameAndSurname", "");
+		}
+		if(rental.getCarDetails()==null){
+			errors.rejectValue("carDetails", "rental.carDetails", "");
+		}
 		if (rental.getFrom().length() < MIN_LENGTH || !isValidFromDate(rental)) {
 			errors.rejectValue("from", "rental.from", "");
 		}
-		if (rental.getFrom().length() < MIN_LENGTH || !isValidToDate(rental)) {
+		if (rental.getTo().length() < MIN_LENGTH || !isValidToDate(rental)) {
 			errors.rejectValue("to", "rental.to", "");
 		}
-		if (rental.getFrom().length() < MIN_LENGTH) {
+		if (rental.getReturnPoint().length() < MIN_LENGTH) {
 			errors.rejectValue("returnPoint", "rental.returnPoint", "");
 		}
 	}

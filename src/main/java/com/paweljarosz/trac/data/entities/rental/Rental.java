@@ -46,9 +46,9 @@ public class Rental {
 	private String from;
 	@Transient
 	private String to;
-	@Transient
+	//@Transient
 	private String nameAndSurname;
-	
+//	@Transient
 	private String carDetails;
 
 	public Date getPickupDate() {
